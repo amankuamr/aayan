@@ -136,6 +136,55 @@
             margin: 0;
             box-shadow: 0 -4px 24px 0 rgba(37,99,235,0.10);
         }
+    /* Responsive styles */
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0.7rem 1rem;
+        }
+        nav ul {
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+        }
+        nav a {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+        }
+        .glass-card {
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 0.7rem 1.5rem 0.7rem;
+            max-width: 98vw;
+            gap: 1.2rem;
+        }
+        .profile-img {
+            width: 110px;
+            height: 110px;
+        }
+        .about {
+            max-width: 100%;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .about-title {
+            font-size: 1.3rem;
+        }
+        .about-subtitle {
+            font-size: 0.98rem;
+        }
+        main {
+            padding: 0.5rem 0;
+        }
+        footer {
+            font-size: 0.85rem;
+            padding: 0.7rem 0;
+        }
+    }
     </style>
     <style>
         .circle-bg {
