@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - Aayan Kumar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+            color: #183153;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {
+            background: rgba(30, 64, 175, 0.65);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(12px);
+            border-radius: 0;
+            box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10);
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.2rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            border-radius: 1.2rem;
+            background: rgba(59,130,246,0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px 0 rgba(37,99,235,0.04);
+            letter-spacing: 0.02em;
+        }
+        nav a.active, nav a[aria-current="page"] {
+            background: rgba(59,130,246,0.35);
+            color: #183153;
+            box-shadow: 0 4px 16px 0 rgba(37,99,235,0.18);
+        }
+        nav a:hover, nav a:focus {
+            background: rgba(59,130,246,0.22);
+            color: #183153;
+            box-shadow: 0 4px 16px 0 rgba(37,99,235,0.10);
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.38);
+            border-radius: 2.5rem;
+            box-shadow: 0 12px 48px 0 rgba(37,99,235,0.18), 0 1.5px 8px 0 rgba(37,99,235,0.10);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 2px solid rgba(59,130,246,0.18);
+            padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1100px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        .gallery-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 12px rgba(37,99,235,0.10);
+        }
+        .gallery-subtitle {
+            font-size: 1.15rem;
+            color: #3b82f6;
+            margin-bottom: 2.2rem;
+            font-weight: 400;
+            text-align: center;
+            max-width: 600px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 2.2rem 2.2rem;
+            justify-items: center;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+        .gallery img {
+            width: 230px;
+            height: 155px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            border: 2.5px solid #e0e7ff;
+            background: rgba(255,255,255,0.32);
+            box-shadow: 0 2px 16px 0 rgba(37,99,235,0.10);
+            transition: transform 0.22s cubic-bezier(.4,2,.6,1), box-shadow 0.22s, border-color 0.22s;
+            opacity: 0;
+            animation: fadeIn 0.7s ease forwards;
+        }
+        .gallery img:hover {
+            transform: scale(1.08) rotate(-1.5deg);
+            box-shadow: 0 8px 32px 0 rgba(37,99,235,0.18), 0 2px 8px 0 rgba(37,99,235,0.10);
+            border-color: #2563eb;
+            z-index: 2;
+        }
+        .gallery img:nth-child(1) { animation-delay: 0.05s; }
+        .gallery img:nth-child(2) { animation-delay: 0.12s; }
+        .gallery img:nth-child(3) { animation-delay: 0.19s; }
+        .gallery img:nth-child(4) { animation-delay: 0.26s; }
+        .gallery img:nth-child(5) { animation-delay: 0.33s; }
+        .gallery img:nth-child(6) { animation-delay: 0.40s; }
+        .gallery img:nth-child(7) { animation-delay: 0.47s; }
+        .gallery img:nth-child(8) { animation-delay: 0.54s; }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        footer {
+            background: rgba(30, 64, 175, 0.65);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.95rem;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: 0 -4px 24px 0 rgba(37,99,235,0.10);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-size:1.3rem;font-weight:bold;">Aayan Kumar</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="photography.html" class="active" aria-current="page">Photography</a></li>
+                <li><a href="about.html#about-site">About This Site</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="glass-card">
+            <div class="gallery-title">Photography Gallery</div>
+            <div class="gallery-subtitle">A curated selection of my favorite moments, landscapes, and stories captured through my lens. Hover over each photo for a closer look.</div>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Landscape 1">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Portrait 1">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Street 1">
+                <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" alt="Wildlife 1">
+                <img src="https://images.unsplash.com/photo-1465101053584-64f3165a1a6c?auto=format&fit=crop&w=400&q=80" alt="Nature 1">
+                <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" alt="Wildlife 2">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Street 2">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Portrait 2">
+            </div>
+        </div>
+    </main>
+    <footer>
+        Created by: John Doe | Phone: (123) 456-7890 | Location: New York, USA
+    </footer>
+</body>
+</html>

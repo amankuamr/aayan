@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About This Site - Aayan Kumar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+            color: #183153;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {
+            background: rgba(30, 64, 175, 0.65);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(12px);
+            border-radius: 0;
+            box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10);
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.2rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            border-radius: 1.2rem;
+            background: rgba(59,130,246,0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px 0 rgba(37,99,235,0.04);
+            letter-spacing: 0.02em;
+        }
+        nav a.active, nav a[aria-current="page"] {
+            background: rgba(59,130,246,0.35);
+            color: #183153;
+            box-shadow: 0 4px 16px 0 rgba(37,99,235,0.18);
+        }
+        nav a:hover, nav a:focus {
+            background: rgba(59,130,246,0.22);
+            color: #183153;
+            box-shadow: 0 4px 16px 0 rgba(37,99,235,0.10);
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.30);
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(37,99,235,0.10);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(59,130,246,0.18);
+            padding: 2.5rem 2rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        footer {
+            background: rgba(30, 64, 175, 0.65);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.95rem;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: 0 -4px 24px 0 rgba(37,99,235,0.10);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-size:1.3rem;font-weight:bold;">Aayan Kumar</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="about.html#about-site" class="active" aria-current="page">About This Site</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="glass-card" id="about-site">
+            <h2>About This Site</h2>
+            <p>I have created this website and used 'HTML5, CSS3 (Glassmorphism), Responsive Web Design, Unsplash API for sample images'.</p>
+        </div>
+    </main>
+    <footer>
+        Created by: John Doe | Phone: (123) 456-7890 | Location: New York, USA
+    </footer>
+</body>
+</html>

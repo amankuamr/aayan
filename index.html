@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Aayan Kumar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+            color: #183153;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {
+            background: rgba(30, 64, 175, 0.65);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(12px);
+            border-radius: 0;
+            box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10);
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.2rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            border-radius: 1.2rem;
+            background: rgba(59,130,246,0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px 0 rgba(37,99,235,0.04);
+            letter-spacing: 0.02em;
+        }
+        nav a.active, nav a[aria-current="page"] {
+            background: rgba(59,130,246,0.35);
+            color: #183153;
+            box-shadow: 0 4px 16px 0 rgba(37,99,235,0.18);
+        }
+        nav a:hover, nav a:focus {
+            background: rgba(59,130,246,0.22);
+            color: #183153;
+            box-shadow: 0 4px 16px 0 rgba(37,99,235,0.10);
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.38);
+            border-radius: 2.5rem;
+            box-shadow: 0 12px 48px 0 rgba(37,99,235,0.18), 0 1.5px 8px 0 rgba(37,99,235,0.10);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 2px solid rgba(59,130,246,0.18);
+            padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+            width: 100%;
+            gap: 2.8rem;
+            opacity: 0;
+            animation: fadeInCard 0.8s ease 0.1s forwards;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 0;
+            box-shadow: 0 2px 24px 0 rgba(37,99,235,0.13);
+            transition: transform 0.22s cubic-bezier(.4,2,.6,1), box-shadow 0.22s;
+        }
+        .profile-img:hover {
+            transform: scale(1.07) rotate(-2deg);
+            box-shadow: 0 8px 32px 0 rgba(37,99,235,0.18), 0 2px 8px 0 rgba(37,99,235,0.10);
+        }
+        .about {
+            max-width: 370px;
+            text-align: left;
+            font-size: 1.13rem;
+            opacity: 0;
+            animation: fadeInAbout 0.8s ease 0.35s forwards;
+        }
+        .about-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #2563eb 30%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.01em;
+        }
+        .about-subtitle {
+            font-size: 1.08rem;
+            color: #3b82f6;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+        @keyframes fadeInCard {
+            to { opacity: 1; }
+        }
+        @keyframes fadeInAbout {
+            to { opacity: 1; }
+        }
+        footer {
+            background: rgba(30, 64, 175, 0.65);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.95rem;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: 0 -4px 24px 0 rgba(37,99,235,0.10);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-size:1.3rem;font-weight:bold;">Aayan Kumar</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="about.html#about-site">About This Site</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="glass-card">
+            <img src="images/aayan.jpeg" alt="Person Image" class="profile-img">
+            <div class="about">
+                <div class="about-title">About Me</div>
+                <div class="about-subtitle">Capturing stories, moments, and emotions through my lens.</div>
+                <p>Hello! I'm a passionate photographer who loves capturing moments and telling stories through my lens. Welcome to my portfolio where you can explore my favorite works in portraits, landscapes, street, and wildlife photography.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Created by: John Doe | Phone: (123) 456-7890 | Location: New York, USA
+    </footer>
+</body>
+</html>
