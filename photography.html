@@ -36,12 +36,12 @@
             gap: 1.2rem;
         }
         nav a {
-            color: #fff;
+            color: #fbbf24;
             text-decoration: none;
             font-weight: 500;
             padding: 0.5rem 1.2rem;
             border-radius: 1.2rem;
-            background: rgba(59,130,246,0.10);
+            background: #2563eb;
             transition: background 0.2s, color 0.2s, box-shadow 0.2s;
             box-shadow: 0 2px 8px 0 rgba(37,99,235,0.04);
             letter-spacing: 0.02em;
@@ -161,19 +161,49 @@
             <div class="gallery-title">Photography Gallery</div>
             <div class="gallery-subtitle">A curated selection of my favorite moments, landscapes, and stories captured through my lens. Hover over each photo for a closer look.</div>
             <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Landscape 1">
-                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Portrait 1">
-                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Street 1">
-                <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" alt="Wildlife 1">
-                <img src="https://images.unsplash.com/photo-1465101053584-64f3165a1a6c?auto=format&fit=crop&w=400&q=80" alt="Nature 1">
-                <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" alt="Wildlife 2">
-                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Street 2">
-                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Portrait 2">
+                <img src="images/pic (1).jpg" alt="Pic 1">
+                <img src="images/pic (2).jpg" alt="Pic 2">
+                <img src="images/pic (3).jpg" alt="Pic 3">
+                <img src="images/pic (4).jpg" alt="Pic 4">
+                <img src="images/pic (5).jpg" alt="Pic 5">
+                <img src="images/pic (6).jpg" alt="Pic 6">
+                <img src="images/pic (7).jpg" alt="Pic 7">
+                <img src="images/pic (8).jpg" alt="Pic 8">
             </div>
         </div>
     </main>
     <footer>
         Created by: Aayan Kumar | Phone: 95720000 | Location: Silli, Muri, Ranchi, Jharkhand
     </footer>
+    <!-- Modal for image preview -->
+    <div id="img-modal" style="display:none;position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(30,41,59,0.85);align-items:center;justify-content:center;">
+        <img id="modal-img" src="" alt="Large view" style="max-width:1100px;max-height:620px;width:100vw;height:auto;border-radius:1.5rem;box-shadow:0 8px 48px 0 rgba(37,99,235,0.25);border:4px solid #fff;">
+    </div>
+    <script>
+    // Modal logic for gallery images
+    const gallery = document.querySelector('.gallery');
+    const modal = document.getElementById('img-modal');
+    const modalImg = document.getElementById('modal-img');
+    if (gallery && modal && modalImg) {
+        gallery.addEventListener('click', function(e) {
+            if (e.target.tagName === 'IMG') {
+                modalImg.src = e.target.src;
+                modal.style.display = 'flex';
+            }
+        });
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modalImg.src = '';
+            }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modal.style.display = 'none';
+                modalImg.src = '';
+            }
+        });
+    }
+    </script>
 </body>
 </html>
